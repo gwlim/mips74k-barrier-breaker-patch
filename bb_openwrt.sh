@@ -1,6 +1,6 @@
 #!/bin/bash
-./scripts/feeds/update -a
-./scripts/feeds/install -a
+./scripts/feeds update -a
+./scripts/feeds install -a
 rm ./feeds/luci/protocols/ppp/luasrc/model/cbi/admin_network/proto_pppoa.lua
         for i in $( ls openwrt-patch ); do
             echo Applying patch $i
