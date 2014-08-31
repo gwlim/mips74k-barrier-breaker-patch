@@ -1,0 +1,29 @@
+--- config/Config-kernel.in.orig	2014-08-31 10:57:31.000000000 +0800
++++ config/Config-kernel.in	2014-08-31 11:23:33.808663015 +0800
+@@ -19,7 +19,7 @@ config KERNEL_SWAP
+ 
+ config KERNEL_DEBUG_FS
+ 	bool "Compile the kernel with Debug FileSystem enabled"
+-	default y
++	default n
+ 	help
+ 	  debugfs is a virtual file system that kernel developers use to put
+ 	  debugging files into. Enable this option to be able to read and
+@@ -39,7 +39,7 @@ config KERNEL_PROFILING
+ 
+ config KERNEL_KALLSYMS
+ 	bool "Compile the kernel with symbol table information"
+-	default y
++	default n
+ 	help
+ 	  This will give you more information in stack traces from kernel oopses
+ 
+@@ -63,7 +63,7 @@ config KERNEL_DEBUG_KERNEL
+ 
+ config KERNEL_DEBUG_INFO
+ 	bool "Compile the kernel with debug information"
+-	default y
++	default n
+ 	select KERNEL_DEBUG_KERNEL
+ 	help
+ 	  This will compile your kernel and modules with debug information.
