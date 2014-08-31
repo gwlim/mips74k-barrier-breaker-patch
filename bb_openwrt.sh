@@ -24,3 +24,5 @@ do
   mv -b "$file-min.css" "$file"
 done
 make defconfig
+rm .config
+make defconfig
