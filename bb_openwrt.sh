@@ -4,7 +4,7 @@
 rm ./feeds/luci/protocols/ppp/luasrc/model/cbi/admin_network/proto_pppoa.lua
         for i in $( ls openwrt-patch ); do
             echo Applying patch $i
-            patch -p1 < custom/$i
+            patch -p1 < openwrt-patch/$i
         done
 wget https://closure-compiler.googlecode.com/files/compiler-20131014.zip
 wget https://github.com/yui/yuicompressor/releases/download/v2.4.8/yuicompressor-2.4.8.jar
