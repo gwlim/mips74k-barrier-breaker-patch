@@ -1,4 +1,4 @@
---- ./target/linux/generic/config-3.10.orig	2014-08-31 13:14:21.000000000 +0800
+--- ./target/linux/generic/config-3.10	2014-08-31 13:14:21.000000000 +0800
 +++ ./target/linux/generic/config-3.10	2014-08-31 13:41:39.788624286 +0800
 @@ -686,13 +686,13 @@ CONFIG_CRYPTO_MANAGER_DISABLE_TESTS=y
  # CONFIG_DEBUG_DEVRES is not set

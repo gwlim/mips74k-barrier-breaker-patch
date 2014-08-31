@@ -1,5 +1,5 @@
---- ./config/Config-kernel.in	2014-08-31 10:57:31.000000000 +0800
-+++ ./config/Config-kernel.in	2014-08-31 11:23:33.808663015 +0800
+--- ./config/Config-kernel.in	2014-08-31 13:47:57.000000000 +0800
++++ ./config/Config-kernel.in	2014-08-31 13:55:27.482987845 +0800
 @@ -19,7 +19,7 @@ config KERNEL_SWAP
  
  config KERNEL_DEBUG_FS
@@ -27,3 +27,24 @@
  	select KERNEL_DEBUG_KERNEL
  	help
  	  This will compile your kernel and modules with debug information.
+@@ -115,7 +115,7 @@ config KERNEL_DIRECT_IO
+ 
+ config KERNEL_MAGIC_SYSRQ
+ 	bool "Compile the kernel with SysRq support"
+-	default y
++	default n
+ 
+ config KERNEL_COREDUMP
+ 	bool
+@@ -144,9 +144,11 @@ config KERNEL_SLABINFO
+ 	select KERNEL_SLUB_DEBUG
+ 	select KERNEL_SLUB_DEBUG_ON
+ 	bool "Enable /proc slab debug info"
++	default n
+ 
+ config KERNEL_PROC_PAGE_MONITOR
+ 	bool "Enable /proc page monitoring"
++	default n
+ 
+ config KERNEL_RELAY
+ 	bool
