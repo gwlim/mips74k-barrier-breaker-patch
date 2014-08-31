@@ -17,14 +17,16 @@ How to use
 ```
 git clone git://git.openwrt.org/14.07/openwrt.git
 ```
+* Clone this Repository and copy into the OpenWRT repository
+```
+git clone https://github.com/gwlim/wdr3600-4300-4310-barrier-breaker-patch.git temp; mv temp/* openwrt/; rm -rf temp
+```
+
 * Change directory into the OpenWrt Repository
 ```
 cd openwrt
 ```
-* Clone this Repository into the OpenWRT repository
-```
-git clone https://github.com/gwlim/wdr3600-4300-4310-barrier-breaker-patch.git .
-```
+
 * Run the script
 ```
 ./bb_openwrt.sh
