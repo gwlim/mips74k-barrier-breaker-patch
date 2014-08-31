@@ -1,5 +1,5 @@
---- config/Config-kernel.in.orig	2014-08-31 10:57:31.000000000 +0800
-+++ config/Config-kernel.in	2014-08-31 11:23:33.808663015 +0800
+--- ./config/Config-kernel.in	2014-08-31 10:57:31.000000000 +0800
++++ ./config/Config-kernel.in	2014-08-31 11:23:33.808663015 +0800
 @@ -19,7 +19,7 @@ config KERNEL_SWAP
  
  config KERNEL_DEBUG_FS
