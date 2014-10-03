@@ -73,7 +73,7 @@
  			mode = AR8327_VTU_FUNC0_EG_MODE_TAG;
  		else
  			mode = AR8327_VTU_FUNC0_EG_MODE_UNTAG;
-@@ -1731,31 +1759,28 @@ ar8327_vtu_load_vlan(struct ar8xxx_priv
+@@ -1731,31 +1759,26 @@ ar8327_vtu_load_vlan(struct ar8xxx_priv
  }
  
  static void
@@ -84,14 +84,12 @@
  	u32 t;
 -	u32 mode;
 +	u32 egress, ingress;
-+	u32 pvid;
++	u32 pvid = priv->vlan_id[priv->pvid[port]];
 +
 +	if (priv->vlan) {
-+		pvid = priv->vlan_id[priv->pvid[port]];
 +		egress = AR8327_PORT_VLAN1_OUT_MODE_UNMOD;
 +		ingress = AR8216_IN_SECURE;
 +	} else {
-+		pvid = port;
 +		egress = AR8327_PORT_VLAN1_OUT_MODE_UNTOUCH;
 +		ingress = AR8216_IN_PORT_ONLY;
 +	}
@@ -119,7 +117,7 @@
  	priv->write(priv, AR8327_REG_PORT_VLAN1(port), t);
  
  	t = members;
-@@ -1875,6 +1900,30 @@ ar8xxx_sw_get_ports(struct switch_dev *d
+@@ -1875,6 +1898,30 @@ ar8xxx_sw_get_ports(struct switch_dev *d
  }
  
  static int
@@ -150,7 +148,7 @@
  ar8xxx_sw_set_ports(struct switch_dev *dev, struct switch_val *val)
  {
  	struct ar8xxx_priv *priv = swdev_to_ar8xxx(dev);
-@@ -1905,6 +1954,31 @@ ar8xxx_sw_set_ports(struct switch_dev *d
+@@ -1905,6 +1952,31 @@ ar8xxx_sw_set_ports(struct switch_dev *d
  	return 0;
  }
  
@@ -182,7 +180,7 @@
  static void
  ar8327_set_mirror_regs(struct ar8xxx_priv *priv)
  {
-@@ -2041,24 +2115,7 @@ ar8xxx_sw_hw_apply(struct switch_dev *de
+@@ -2041,24 +2113,7 @@ ar8xxx_sw_hw_apply(struct switch_dev *de
  
  	/* update the port destination mask registers and tag settings */
  	for (i = 0; i < dev->ports; i++) {
@@ -208,7 +206,7 @@
  	}
  
  	ar8xxx_set_mirror_regs(priv);
-@@ -2464,8 +2521,8 @@ static const struct switch_dev_ops ar832
+@@ -2464,8 +2519,8 @@ static const struct switch_dev_ops ar832
  	},
  	.get_port_pvid = ar8xxx_sw_get_pvid,
  	.set_port_pvid = ar8xxx_sw_set_pvid,
