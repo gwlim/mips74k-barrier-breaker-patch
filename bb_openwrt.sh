@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 ./scripts/feeds update -a
 ./scripts/feeds install -a
 rm ./feeds/luci/protocols/ppp/luasrc/model/cbi/admin_network/proto_pppoa.lua
