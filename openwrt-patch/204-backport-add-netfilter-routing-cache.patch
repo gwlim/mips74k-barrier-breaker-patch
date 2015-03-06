@@ -47,7 +47,7 @@ Signed-off-by: Florian Westphal <fw@strlen.de>
  # CONFIG_NF_NAT_FTP is not set
 --- /dev/null	2014-12-09 20:04:54.263762829 +0800
 +++ ./target/linux/generic/patches-3.10/090-backport_netfilter_rtcache.patch	2014-12-09 23:22:46.236696762 +0800
-@@ -0,0 +1,546 @@
+@@ -0,0 +1,542 @@
 +Subject: netfilter: conntrack: cache route for forwarded connections
 +
 +... to avoid per-packet FIB lookup if possible.
@@ -165,7 +165,7 @@ Signed-off-by: Florian Westphal <fw@strlen.de>
 + obj-$(CONFIG_NF_CT_PROTO_GRE) += nf_conntrack_proto_gre.o
 +--- /dev/null
 ++++ b/net/netfilter/nf_conntrack_rtcache.c
-+@@ -0,0 +1,428 @@
++@@ -0,0 +1,424 @@
 ++/* route cache for netfilter.
 ++ *
 ++ * (C) 2014 Red Hat GmbH
@@ -187,7 +187,6 @@ Signed-off-by: Florian Westphal <fw@strlen.de>
 ++#include <linux/module.h>
 ++
 ++#include <net/dst.h>
-++#include <net/xfrm.h>
 ++
 ++#include <net/netfilter/nf_conntrack.h>
 ++#include <net/netfilter/nf_conntrack_core.h>
@@ -378,9 +377,6 @@ Signed-off-by: Florian Westphal <fw@strlen.de>
 ++	enum ip_conntrack_dir dir;
 ++	struct nf_conn *ct;
 ++	int iif;
-++
-++	if (secpath_exists(skb))
-++		return NF_ACCEPT;
 ++
 ++	ct = nf_ct_get(skb, &ctinfo);
 ++	if (!ct)
