@@ -6,8 +6,8 @@
  BOARDNAME:=Atheros AR7xxx/AR9xxx
 -FEATURES:=mips16
 -CPU_TYPE=34kc
-+FEATURES:=
 +CPU_TYPE=74kc
++CPU_SUBTYPE:=dsp2
  SUBTARGETS:=generic nand mikrotik
  
  KERNEL_PATCHVER:=3.10
