@@ -1,0 +1,22 @@
+--- ./package/kernel/mac80211/Makefile
++++ ./package/kernel/mac80211/Makefile
+@@ -79,7 +79,7 @@ endef
+ define KernelPackage/mac80211
+   $(call KernelPackage/mac80211/Default)
+   TITLE:=Linux 802.11 Wireless Networking Stack
+-  DEPENDS+= +kmod-crypto-core +kmod-crypto-arc4 +kmod-crypto-aes +kmod-cfg80211 +hostapd-common
++  DEPENDS+= +kmod-crypto-core +kmod-crypto-arc4 +kmod-cfg80211 +hostapd-common
+   KCONFIG:=\
+ 	CONFIG_AVERAGE=y
+   FILES:= $(PKG_BUILD_DIR)/net/mac80211/mac80211.ko
+
+@@ -1495,7 +1495,6 @@ config_package=$(if $(CONFIG_PACKAGE_kmo
+ 
+ config-y:= \
+ 	WLAN \
+-	NL80211_TESTMODE \
+ 	CFG80211_WEXT \
+ 	CFG80211_INTERNAL_REGDB \
+ 	CFG80211_CERTIFICATION_ONUS \
+
+
