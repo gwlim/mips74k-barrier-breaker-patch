@@ -8,7 +8,7 @@
 +	--enable-threads=posix \
 +	--enable-lto \
 +	--with-arch=mips32r2 \
-+	--with-mtune=24kc \
++	--with-mtune=74kc \
 +	--with-mips-plt \
 +	--disable-nls \
  	--with-slibdir=$(TOOLCHAIN_DIR)/lib
