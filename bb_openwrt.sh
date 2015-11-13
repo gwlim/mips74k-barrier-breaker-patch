@@ -53,10 +53,6 @@ rm ./target/linux/generic/patches-3.10/602-netfilter_layer7_match.patch
 rm ./target/linux/generic/patches-3.10/603-netfilter_layer7_2.6.36_fix.patch
 rm ./package/network/utils/iptables/patches/002-layer7_2.22.patch
 
-echo "src-git cero https://github.com/dtaht/ceropackages-3.10.git" >> feeds.conf
-./scripts/feeds update -a
-./scripts/feeds install -p cero kmod-sched-cake
-
 make defconfig
 rm .config
 make defconfig
