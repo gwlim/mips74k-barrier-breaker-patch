@@ -55,7 +55,7 @@ rm ./package/network/utils/iptables/patches/002-layer7_2.22.patch
 
 echo "src-git cero https://github.com/dtaht/ceropackages-3.10.git" >> feeds.conf
 ./scripts/feeds update -a
-./scripts/feeds install -p cero kmod-sched-cake kmod-sched-fq_pie tc-adv
+./scripts/feeds install -p cero kmod-sched-cake
 
 make defconfig
 rm .config
