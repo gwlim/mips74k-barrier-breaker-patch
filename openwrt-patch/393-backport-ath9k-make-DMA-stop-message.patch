@@ -1,5 +1,5 @@
 --- /dev/null	2015-11-25 20:28:44.077093182 +0800
-+++ ./package/kernel/mac80211/patches/393-ath9k-make-DMA-stop-related-messages-debug-only.patch	2015-11-26 19:31:40.563410310 +0800
++++ ./package/kernel/mac80211/patches/993-ath9k-make-DMA-stop-related-messages-debug-only.patch	2015-11-26 19:31:40.563410310 +0800
 @@ -0,0 +1,58 @@
 +--- a/drivers/net/wireless/ath/ath9k/debug.c
 ++++ b/drivers/net/wireless/ath/ath9k/debug.c
